@@ -20,24 +20,24 @@ export const sosmed: Sosmed[] = [
     nama: "Github",
     icon: GithubIcon,
     darkIcon: GithubDarkIcon,
-    link: "",
+    link: "https://github.com/BEGDAR8ZOUHAIR",
   },
   {
     nama: "Linkedin",
     icon: LinkedinIcon,
     darkIcon: LinkedinDarkIcon,
-    link: "",
+    link: "https://www.linkedin.com/in/zouhair-begdar/",
   },
   {
     nama: "Youtube",
     icon: YoutubeIcon,
     darkIcon: YoutubeDarkIcon,
-    link: "",
+    link: "https://www.youtube.com/@zouhairbegdar98",
   },
   {
     nama: "Instagram",
     icon: InstagramIcon,
     darkIcon: InstagramDarkIcon,
-    link: "",
+    link: "https://www.instagram.com/zouhair_begdar/",
   },
 ];

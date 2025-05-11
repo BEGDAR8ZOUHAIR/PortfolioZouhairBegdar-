@@ -29,6 +29,18 @@ export const frontEnd = [
     image: TypesciptIcon,
   },
   {
+    name: "Next.Js",
+    image: NextIcon,
+  },
+  {
+    name: "React",
+    image: ReactIcon,
+  },
+  {
+    name: "React Native",
+    image: ReactNativeIcon,
+  },
+  {
     name: "HTML",
     image: HtmlIcon,
   },
@@ -44,18 +56,7 @@ export const frontEnd = [
     name: "Tailwind",
     image: TailwindIcon,
   },
-  {
-    name: "Next.Js",
-    image: NextIcon,
-  },
-  {
-    name: "React",
-    image: ReactIcon,
-  },
-  {
-    name: "React Native",
-    image: ReactNativeIcon,
-  },
+
 ];
 
 export const backEnd = [

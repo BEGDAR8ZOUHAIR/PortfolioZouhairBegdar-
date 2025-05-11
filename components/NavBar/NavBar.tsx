@@ -52,7 +52,7 @@ const NavBar = () => {
       }}
     >
       <Magnetic>
-        <div className="font-geist text-[2.5rem] text-warnaPutih">
+        <div className="font-geist text-[2rem] text-warnaPutih">
           <div className="pointer-events-auto absolute left-0 right-0 h-full w-full hover:scale-150" />
           <h1 className="font-geist font-bold">ZOUHAIR BEGDAR</h1>
         </div>
