@@ -1,4 +1,3 @@
-import Register from '@/assets/images/Register.png';
 import { StaticImageData } from "next/image";
 
 export interface Works {
