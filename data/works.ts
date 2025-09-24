@@ -1,11 +1,5 @@
+import Register from '@/assets/images/Register.png';
 import { StaticImageData } from "next/image";
-import Catetin from "../assets/images/Catetin.png";
-import CatetinIcon from "../assets/images/CatetinIcon.png";
-import Cuaca from "../assets/images/Cuaca.png";
-import CuacaIcon from "../assets/images/CuacaIcon.png";
-import Koce from "../assets/images/Koce.png";
-import LifeFitConnect from "../assets/images/LifeFitConnect.png";
-import Youtube from "../assets/images/Youtube.png";
 
 export interface Works {
   name: string;
@@ -14,167 +8,181 @@ export interface Works {
   icon?: StaticImageData;
   buttons?: { name: string; link: string }[];
   video?: string;
-  image: StaticImageData;
+  image?: StaticImageData;
+  gradient?: string; // Add gradient option as fallback
+  emoji?: string; // Add emoji option for visual representation
 }
 
 export const worksID: Works[] = [
   {
-    name: "Youtube Channel",
-    tags: ["FrontEnd", "React Native", "Animation"],
+    name: "Calories AI",
+    tags: ["AI/ML", "TypeScript", "Health Tech", "Original"],
     buttons: [
       {
-        name: "Youtube",
-        link: "https://www.youtube.com/channel/UCUb0G_PXtgWV_TmuJXLFxRw",
+        name: "View Project",
+        link: "https://github.com/BEGDAR8ZOUHAIR/calories-ai",
       },
       {
         name: "Github",
-        link: "https://github.com/Rakha112/react-native-animation",
+        link: "https://github.com/BEGDAR8ZOUHAIR/calories-ai",
       },
     ],
     description: [
-      "Youtube Channel saya",
-      "berisi tutorial membuat Komponen",
-      "dan Animasinya pada React Native",
+      "Aplikasi AI untuk pelacakan kalori menggunakan TypeScript dan teknologi pembelajaran mesin.",
+      "Proyek original dengan implementasi AI untuk deteksi dan analisis makanan secara real-time.",
+      "Solusi kesehatan digital inovatif dengan teknologi machine learning terdepan.",
     ],
-    image: Youtube,
+    gradient: "from-orange-500 to-red-600",
+    emoji: "🍎",
   },
   {
-    name: "Cuaca",
-    tags: ["FrontEnd", "ReactJS", "React Native"],
-    description: [
-      "Cuaca App merupakan",
-      "aplikasi yang berfungsi mencari informasi",
-      "Cuaca di Kota yang ada di Indonesia",
-    ],
-    icon: CuacaIcon,
+    name: "Expense Tracker App",
+    tags: ["React Native", "Firebase", "Cloudinary", "Full-Stack"],
     buttons: [
-      { name: "Web", link: "https://cuaca.rakhawibowo.com/" },
       {
-        name: "Android",
-        link: "https://drive.google.com/file/d/1Bb9RDqRAfzBdxB7siR5FZeYSmGGPfFqn/view?usp=share_link",
+        name: "View Project",
+        link: "https://github.com/BEGDAR8ZOUHAIR/expense-tracker-app",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/expense-tracker-app",
       },
     ],
-    video: "https://youtu.be/RcwD1bV0c0Q",
-    image: Cuaca,
+    description: [
+      "Aplikasi pelacakan pengeluaran komprehensif dengan React Native, Firebase, dan Cloudinary.",
+      "Fitur lengkap: autentikasi, statistik, manajemen dompet, upload media, dan profil pengguna.",
+      "Arsitektur full-stack modern dengan real-time synchronization dan cloud storage.",
+    ],
+    gradient: "from-green-500 to-emerald-600",
+    emoji: "💰",
   },
   {
-    name: "Catetin",
-    tags: ["FullStack", "ReactJS", "React Native", "ExpressJS", "MySQL"],
-    description: [
-      "Catetin App merupakan",
-      "aplikasi yang berfungsi untuk Mencatat",
-      "apapun yang anda inginkan",
-    ],
-    icon: CatetinIcon,
+    name: "ZenWork Employee Dashboard",
+    tags: ["React", "TypeScript", "Dashboard", "Enterprise"],
     buttons: [
-      { name: "Web", link: "https://catetin.rakhawibowo.com/" },
       {
-        name: "Android",
-        link: "https://drive.google.com/file/d/1SS4XVmfiDIwaGnVzAnKkokvkmGOVWVEk/view?usp=share_link",
+        name: "View Project",
+        link: "https://github.com/BEGDAR8ZOUHAIR/zenwork-employee",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/zenwork-employee",
       },
     ],
-    video: "https://youtu.be/OBcxXWdQuL4",
-    image: Catetin,
-  },
-  {
-    name: "Life Fit Connect",
-    tags: ["FullStack", "React Native", "NestJS", "MySQL", "Prisma"],
     description: [
-      "Life Fit Connect App merupakan",
-      "aplikasi Reminder minum obat",
-      "dan Tracking jogging",
+      "Dashboard karyawan yang dibangun dari nol dengan React dan TypeScript.",
+      "Sistem manajemen karyawan enterprise dengan interface yang intuitif dan responsive.",
+      "Proyek original mendemonstrasikan kemampuan dalam membangun aplikasi bisnis kompleks.",
     ],
-    image: LifeFitConnect,
-  },
-  {
-    name: "Koce Delivery",
-    tags: ["FullStack", "React Native", "ExpressJs", "MySQL"],
-    description: [
-      "Koce Delivery App merupakan",
-      "aplikasi Pesan Antar untuk Restoran",
-      "Korean Chicken Express (Koce)",
-    ],
-    image: Koce,
+    gradient: "from-blue-500 to-indigo-600",
+    emoji: "👥",
   },
 ];
 
 export const worksEng: Works[] = [
   {
-    name: "Youtube Channel",
-    tags: ["FrontEnd", "React Native", "Animation"],
+    name: "Calories AI",
+    tags: ["AI/ML", "TypeScript", "Health Tech", "Original"],
     buttons: [
       {
-        name: "Youtube",
-        link: "https://www.youtube.com/channel/UCUb0G_PXtgWV_TmuJXLFxRw",
+        name: "Live Demo",
+        link: "https://github.com/BEGDAR8ZOUHAIR/calories-ai",
       },
       {
         name: "Github",
-        link: "https://github.com/Rakha112/react-native-animation",
+        link: "https://github.com/BEGDAR8ZOUHAIR/calories-ai",
       },
     ],
     description: [
-      "My Youtube Channel",
-      "contains tutorials on creating components",
-      "and animations in React Native",
+      "Original AI-powered calorie tracking application built from scratch with TypeScript and ML.",
+      "Features real-time food detection and nutritional analysis using advanced machine learning algorithms.",
+      "Innovative digital health solution demonstrating expertise in cutting-edge AI technologies.",
     ],
-    image: Youtube,
+    gradient: "from-orange-500 to-red-600",
+    emoji: "🍎",
   },
   {
-    name: "Cuaca",
-    tags: ["FrontEnd", "ReactJS", "React Native"],
-    description: [
-      "Cuaca App is",
-      "an app that provides weather information",
-      "for cities across Indonesia",
-    ],
-    icon: CuacaIcon,
+    name: "Expense Tracker App",
+    tags: ["React Native", "Firebase", "Cloudinary", "Full-Stack"],
     buttons: [
-      { name: "Web", link: "https://cuaca.rakhawibowo.com/" },
       {
-        name: "Android",
-        link: "https://drive.google.com/file/d/1Bb9RDqRAfzBdxB7siR5FZeYSmGGPfFqn/view?usp=share_link",
+        name: "View Demo",
+        link: "https://github.com/BEGDAR8ZOUHAIR/expense-tracker-app",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/expense-tracker-app",
       },
     ],
-    video: "https://youtu.be/RcwD1bV0c0Q",
-    image: Cuaca,
+    description: [
+      "Comprehensive expense tracking app built entirely from scratch with React Native ecosystem.",
+      "Complete feature set: authentication, statistics, wallet management, media uploads, user profiles.",
+      "Modern full-stack architecture with real-time synchronization and cloud storage integration.",
+    ],
+    gradient: "from-green-500 to-emerald-600",
+    emoji: "💰",
   },
   {
-    name: "Catetin",
-    tags: ["FullStack", "ReactJS", "React Native", "ExpressJS", "MySQL"],
-    description: [
-      "Catetin App is",
-      "an app that lets you take notes",
-      "on anything you want",
-    ],
-    icon: CatetinIcon,
+    name: "ZenWork Employee Dashboard",
+    tags: ["React", "TypeScript", "Dashboard", "Enterprise"],
     buttons: [
-      { name: "Web", link: "https://catetin.rakhawibowo.com/" },
       {
-        name: "Android",
-        link: "https://drive.google.com/file/d/1SS4XVmfiDIwaGnVzAnKkokvkmGOVWVEk/view?usp=share_link",
+        name: "View Dashboard",
+        link: "https://github.com/BEGDAR8ZOUHAIR/zenwork-employee",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/zenwork-employee",
       },
     ],
-    video: "https://youtu.be/OBcxXWdQuL4",
-    image: Catetin,
+    description: [
+      "Custom-built employee dashboard developed from the ground up with React and TypeScript.",
+      "Enterprise-grade employee management system with intuitive and responsive interface design.",
+      "Original project showcasing ability to build complex business applications independently.",
+    ],
+    gradient: "from-blue-500 to-indigo-600",
+    emoji: "👥",
   },
   {
-    name: "Life Fit Connect",
-    tags: ["FullStack", "React Native", "NestJS", "MySQL", "Prisma"],
-    description: [
-      "Life Fit Connect App is",
-      "a medicine reminder and",
-      "jogging tracker app",
+    name: "Car Marketplace",
+    tags: ["TypeScript", "E-commerce", "Automotive", "Full-Stack"],
+    buttons: [
+      {
+        name: "Browse Platform",
+        link: "https://github.com/BEGDAR8ZOUHAIR/car-marketplace",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/car-marketplace",
+      },
     ],
-    image: LifeFitConnect,
+    description: [
+      "Original automotive marketplace platform built entirely with modern TypeScript architecture.",
+      "Advanced search, filtering, and comparison systems for comprehensive vehicle listings management.",
+      "Professional e-commerce solution demonstrating full-stack development capabilities.",
+    ],
+    gradient: "from-red-500 to-orange-600",
+    emoji: "🚗",
   },
   {
-    name: "Koce Delivery",
-    tags: ["FullStack", "React Native", "ExpressJs", "MySQL"],
-    description: [
-      "Koce Delivery App is",
-      "a food delivery application for the restaurant",
-      "Korean Chicken Express (Koce)",
+    name: "Weather App Current",
+    tags: ["JavaScript", "Weather API", "Mobile", "Real-time"],
+    buttons: [
+      {
+        name: "Check Weather",
+        link: "https://github.com/BEGDAR8ZOUHAIR/weaderAppCurrent",
+      },
+      {
+        name: "Github",
+        link: "https://github.com/BEGDAR8ZOUHAIR/weaderAppCurrent",
+      },
     ],
-    image: Koce,
+    description: [
+      "Custom weather application built from scratch with JavaScript and weather API integration.",
+      "Real-time weather data with location-based forecasting and interactive user interface.",
+      "Original project with 2+ stars showing solid development skills and user engagement.",
+    ],
+    gradient: "from-cyan-500 to-blue-600",
+    emoji: "🌤️",
   },
 ];

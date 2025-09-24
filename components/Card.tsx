@@ -1,189 +1,112 @@
 "use client";
 
-import ArrowIcon from "@/assets/svg/ArrowRightIcon.svg";
-import PlayIcon from "@/assets/svg/PlayIcon.svg";
 import { Works } from "@/data/works";
-import useWindowSize from "@/hooks/useWindowSize";
-import useVideoPlayerStore from "@/store/videoPlayerStore";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-type Props = {
+interface CardProps {
   i: number;
+  item: Works;
   progress: MotionValue<number>;
   range: number[];
   targetScale: number;
-  item: Works;
-};
+}
 
-const Card = ({ i, progress, range, targetScale, item }: Props) => {
-  const setVideoPlay = useVideoPlayerStore((state) => state.setVideoPlay);
-  const setVideoUrl = useVideoPlayerStore((state) => state.setVideoUrl);
-  const { width: windowWidth } = useWindowSize();
+const Card = ({ i, item, progress, range, targetScale }: CardProps) => {
   const container = useRef(null);
-  const tagRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-  const [drag, setDrag] = useState(false);
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.5, 1]);
-  const imageScaleMobile = useTransform(scrollYProgress, [0, 1], [1.3, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div
-      ref={container}
-      className="sticky top-0 flex h-screen items-center justify-center will-change-transform"
-    >
+    <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
-        style={{
-          scale,
-          top: `calc(-5vh + ${i * 25}px)`,
-        }}
-        className="relative top-[-25%] flex h-[80vh] w-[90vw] origin-top flex-col-reverse overflow-hidden rounded-3xl border border-warnaHitam bg-warnaHitamCerah will-change-transform lg:flex-row"
+        ref={container}
+        className="flex flex-col relative h-[500px] w-[1000px] max-w-[90vw] rounded-3xl p-8 origin-top bg-gray-900 border border-gray-800"
+        style={{ scale }}
       >
-        <div className="flex flex-1 flex-col justify-between lg:max-w-[50%]">
-          <div className="ml-4 mt-4 lg:ml-8 lg:mt-8">
-            <div className="flex gap-[10px]">
-              <h1 className="cursor-default text-[60px] leading-none text-warnaPutih lg:text-[100px]">
-                {item.name}
-              </h1>
-              {item.icon && (
-                <div className="relative h-[40px] w-[40px] overflow-hidden rounded-[10px]">
-                  <Image
-                    className="h-[40px] w-[40px]"
-                    src={item.icon}
-                    width={10}
-                    height={10}
-                    alt="Icon"
-                    priority
-                  />
-                </div>
-              )}
-            </div>
-            <div className="mr-4" ref={tagRef}>
-              <motion.div
-                className={`flex w-fit flex-nowrap gap-[5px] ${drag ? "cursor-grabbing" : "cursor-grab"}`}
-                drag="x"
-                dragConstraints={tagRef}
-                onMouseDown={() => {
-                  setDrag(true);
-                }}
-                onMouseUp={() => {
-                  setDrag(false);
-                }}
-                onTapCancel={() => {
-                  setDrag(false);
-                }}
-              >
-                {item.tags.map((tag, i) => {
-                  return (
-                    <div
-                      className={`rounded-[100px] border border-warnaPutih px-4 py-1 ${drag ? "cursor-grabbing" : "cursor-grab"}`}
-                      key={i}
-                    >
-                      <p
-                        className={`whitespace-nowrap text-warnaPutih ${drag ? "cursor-grabbing" : "cursor-grab"}`}
-                      >
-                        {tag}
-                      </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+          {/* Project Visual */}
+          <div className="relative overflow-hidden rounded-2xl">
+            {item.image ? (
+              <Image
+                src={item.image}
+                alt={item.name}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className={`w-full h-full bg-gradient-to-br ${item.gradient} flex items-center justify-center relative`}>
+                <div className="text-8xl mb-4">{item.emoji}</div>
+                <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.slice(0, 3).map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-white/20 rounded-full text-xs text-white font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  );
-                })}
-              </motion.div>
-            </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
-          <div className="mb-4 ml-4 lg:mb-8 lg:ml-8">
-            <div className="px-0 py-4">
-              {item.description.map((des, i) => {
-                return (
-                  <p
-                    className="cursor-default text-warnaPutih lg:text-[20px]"
-                    key={i}
+
+          {/* Project Info */}
+          <div className="flex flex-col justify-between text-white">
+            <div>
+              <h2 className="text-2xl font-bold mb-4">{item.name}</h2>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {item.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700"
                   >
-                    {des}
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="space-y-3 text-gray-300">
+                {item.description.map((desc, index) => (
+                  <p key={index} className="leading-relaxed">
+                    {desc}
                   </p>
-                );
-              })}
+                ))}
+              </div>
             </div>
-            <div className="flex gap-[10px]">
-              {item.buttons &&
-                item.buttons.map((button, index) => {
-                  return (
-                    <button
-                      className="relative flex w-[120px] cursor-pointer items-center justify-between rounded-[20px] border border-warnaPutih py-2 pl-4 pr-2"
-                      key={index}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(
-                          button.link,
-                          "_blank",
-                          "noopener,noreferrer",
-                        );
-                      }}
-                    >
-                      <p className="text-[16px] leading-none text-warnaPutih">
-                        {button.name}
-                      </p>
-                      <Image
-                        src={ArrowIcon}
-                        width={20}
-                        height={20}
-                        alt="Icon"
-                        priority
-                      />
-                    </button>
-                  );
-                })}
+
+            {/* Action Buttons */}
+            <div className="flex gap-4 mt-6">
+              {item.buttons?.map((button, index) => (
+                <motion.a
+                  key={index}
+                  href={button.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                    index === 0
+                      ? "bg-white text-gray-900 hover:bg-gray-100"
+                      : "bg-gray-800 text-white hover:bg-gray-700 border border-gray-700"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {button.name}
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>
-        <div className="relative flex flex-1 overflow-hidden">
-          <motion.div
-            className="relative w-full will-change-transform"
-            style={{
-              scale: windowWidth! > 1024 ? imageScale : imageScaleMobile,
-            }}
-          >
-            <Image
-              src={item.image!}
-              alt="Image"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-          {item.video && (
-            <div
-              onClick={() => {
-                setVideoUrl(item.video!);
-                setVideoPlay(true);
-              }}
-            >
-              <div className="absolute bottom-[10px] left-[10px] flex cursor-pointer rounded-full bg-warnaHitamCerah px-4 py-1">
-                <p className="text-[14px] leading-none text-warnaPutih">
-                  Click to play Demo Video
-                </p>
-              </div>
-              <motion.div
-                className="absolute bottom-0 left-0 right-0 top-0 flex cursor-pointer items-center justify-center"
-                initial={{
-                  opacity: 0,
-                  scale: 0.8,
-                }}
-                whileHover={{
-                  opacity: 1,
-                  scale: 1,
-                  transition: { ease: [0.22, 1, 0.36, 1] },
-                }}
-              >
-                <Image src={PlayIcon} alt="Play" width={100} height={100} />
-              </motion.div>
-            </div>
-          )}
+
+        {/* Project Number */}
+        <div className="absolute top-4 right-4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-bold">
+          {String(i + 1).padStart(2, '0')}
         </div>
       </motion.div>
     </div>
