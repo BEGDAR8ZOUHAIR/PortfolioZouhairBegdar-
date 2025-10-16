@@ -2,7 +2,6 @@ import Cursor from "@/components/Cursor";
 import BackDropNav from "@/components/NavBar/BackDropNav";
 import HiddenNav from "@/components/NavBar/HiddenNav";
 import NavBar from "@/components/NavBar/NavBar";
-import VideoPlayer from "@/components/VideoPlayer";
 import Welcome from "@/components/Welcome";
 import About from "@/sections/About";
 import Footer from "@/sections/Footer";
@@ -24,7 +23,6 @@ const page = () => {
         <Work />
         <Footer />
         <BackDropNav />
-        <VideoPlayer />
       </div>
     </main>
   );

@@ -21,10 +21,10 @@ const Card = ({ i, item, progress, range, targetScale }: CardProps) => {
     <div className="h-screen flex items-center justify-center sticky top-0">
       <motion.div
         ref={container}
-        className="flex flex-col relative h-[500px] w-[1000px] max-w-[90vw] rounded-3xl p-8 origin-top bg-gray-900 border border-gray-800"
+        className="flex flex-col relative h-[450px] w-[900px] max-w-[90vw] rounded-2xl p-6 origin-top bg-gray-900 border border-gray-800"
         style={{ scale }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full">
           {/* Project Visual */}
           <div className="relative overflow-hidden rounded-2xl">
             {item.image ? (
@@ -59,22 +59,22 @@ const Card = ({ i, item, progress, range, targetScale }: CardProps) => {
           {/* Project Info */}
           <div className="flex flex-col justify-between text-white">
             <div>
-              <h2 className="text-2xl font-bold mb-4">{item.name}</h2>
+              <h2 className="text-xl font-bold mb-3">{item.name}</h2>
               
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-3">
                 {item.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700"
+                    className="px-2 py-1 bg-gray-800 rounded-full text-xs text-gray-300 border border-gray-700"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="space-y-3 text-gray-300">
+              <div className="space-y-2 text-gray-300">
                 {item.description.map((desc, index) => (
-                  <p key={index} className="leading-relaxed">
+                  <p key={index} className="text-sm leading-relaxed">
                     {desc}
                   </p>
                 ))}
@@ -82,14 +82,14 @@ const Card = ({ i, item, progress, range, targetScale }: CardProps) => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-3 mt-4">
               {item.buttons?.map((button, index) => (
                 <motion.a
                   key={index}
                   href={button.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     index === 0
                       ? "bg-white text-gray-900 hover:bg-gray-100"
                       : "bg-gray-800 text-white hover:bg-gray-700 border border-gray-700"

@@ -25,20 +25,20 @@ const WorkTogether = () => {
     >
       <div className="sticky top-0 flex h-screen w-screen flex-col items-center justify-center">
         <motion.h1
-          className="font-geist text-[3rem] font-bold leading-none text-warnaPutih sm:text-[6rem] md:text-[8rem] lg:text-[8rem] 2xl:text-[12rem]"
+          className="font-geist text-[2.5rem] font-bold leading-none text-warnaPutih sm:text-[4.5rem] md:text-[6rem] lg:text-[6rem] 2xl:text-[8rem]"
           style={{ y: (windowWidth ?? 0) < 1024 ? y11 : y1 }}
         >
           LET&apos;S WORK
         </motion.h1>
         <motion.p
-          className="absolute rounded-full border border-warnaPutih px-4 py-2 font-geist text-[0.6rem] leading-none text-warnaPutih sm:text-[1rem] md:px-6 md:py-4 md:text-[1.25rem] lg:text-[1.5rem] 2xl:text-[2rem]"
+          className="absolute rounded-full border border-warnaPutih px-3 py-2 font-geist text-[0.55rem] leading-none text-warnaPutih sm:text-[0.85rem] md:px-5 md:py-3 md:text-[1rem] lg:text-[1.1rem] 2xl:text-[1.3rem]"
           style={{ opacity }}
         >
           Feel free to reach out to me. I&apos;m always open to discuss new
           projects
         </motion.p>
         <motion.h1
-          className="font-geist text-[3rem] font-bold leading-none text-warnaPutih sm:text-[6rem] md:text-[8rem] lg:text-[8rem] 2xl:text-[12rem]"
+          className="font-geist text-[2.5rem] font-bold leading-none text-warnaPutih sm:text-[4.5rem] md:text-[6rem] lg:text-[6rem] 2xl:text-[8rem]"
           style={{ y: (windowWidth ?? 0) < 1024 ? y22 : y2 }}
         >
           TOGETHER

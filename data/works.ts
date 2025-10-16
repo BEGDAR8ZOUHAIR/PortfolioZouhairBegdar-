@@ -6,10 +6,9 @@ export interface Works {
   description: string[];
   icon?: StaticImageData;
   buttons?: { name: string; link: string }[];
-  video?: string;
   image?: StaticImageData;
-  gradient?: string; // Add gradient option as fallback
-  emoji?: string; // Add emoji option for visual representation
+  gradient?: string;
+  emoji?: string;
 }
 
 export const worksID: Works[] = [

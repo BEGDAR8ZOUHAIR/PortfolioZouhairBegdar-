@@ -134,12 +134,12 @@ const Form = () => {
         showToast={showToast}
         setShowToast={setShowToast}
       />
-      <h1 className="mt-4 text-center text-[56px] font-semibold leading-none text-warnaPutih lg:text-[80px]">
+      <h1 className="mt-4 text-center text-[36px] font-semibold leading-none text-warnaPutih lg:text-[48px]">
         Contact Me
       </h1>
       <form className="z-[4] w-full p-8">
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
           type="text"
           name="name"
           placeholder="Name"
@@ -160,7 +160,7 @@ const Form = () => {
           }}
         />
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
           type="email"
           name="email"
           placeholder="Email"
@@ -181,7 +181,7 @@ const Form = () => {
           }}
         />
         <motion.textarea
-          className="mt-4 w-full resize-none rounded-2xl bg-warnaHitam p-4 font-geist text-base leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full resize-none rounded-2xl bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
           cols={30}
           rows={5}
           name="message"
@@ -203,7 +203,7 @@ const Form = () => {
           }}
         />
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-4 text-warnaPutih"
+          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-3 text-sm text-warnaPutih"
           initial="initial"
           animate="hidden"
           whileHover="visible"
@@ -235,11 +235,11 @@ const Form = () => {
             </>
           )}
         </motion.button>
-        <h3 className="mt-4 text-center font-semibold text-warnaPutih">
+        <h3 className="mt-4 text-center text-sm font-semibold text-warnaPutih">
           Or Email
         </h3>
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-4 text-warnaPutih"
+          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-3 text-sm text-warnaPutih"
           initial="initial"
           animate="hidden"
           whileHover="visible"
