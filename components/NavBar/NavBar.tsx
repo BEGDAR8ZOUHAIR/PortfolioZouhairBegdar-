@@ -10,6 +10,7 @@ import { useLenis } from "lenis/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Ham from "./Ham";
 import Magnetic from "./Magnetic";
+import ThemeToggle from "../ThemeToggle";
 
 const NavBar = () => {
   const { scrollYProgress } = useScroll();
@@ -41,7 +42,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed left-[0.8rem] right-[0.8rem] top-0 z-10 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform"
+      className="fixed left-[0.8rem] right-[0.8rem] top-0 z-10 mt-4 flex items-center justify-between rounded-full p-4 will-change-transform border border-[color:var(--border)] bg-[color:var(--muted)]/60"
       style={{ backdropFilter: blur, WebkitBackdropFilter: blur }}
       initial={{ y: -300 }}
       animate={{ y: direction === 0 || direction === -1 ? 0 : -200 }}
@@ -52,12 +53,15 @@ const NavBar = () => {
       }}
     >
       <Magnetic>
-        <div className="font-geist text-base md:text-lg text-warnaPutih">
+        <div className="font-geist text-base md:text-lg text-[color:var(--foreground)]">
           <div className="pointer-events-auto absolute left-0 right-0 h-full w-full hover:scale-150" />
           <h1 className="font-geist font-semibold tracking-tight">Zouhair Begdar</h1>
         </div>
       </Magnetic>
-      <Ham />
+      <div className="flex items-center gap-2">
+        <ThemeToggle />
+        <Ham />
+      </div>
     </motion.nav>
   );
 };

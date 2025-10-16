@@ -11,8 +11,8 @@ import Work from "@/sections/Work";
 
 const page = () => {
   return (
-    <main className="relative flex max-w-[100vw] flex-col items-center justify-center bg-warnaHitam">
-      <div className="flex flex-col items-center justify-center">
+    <main className="relative flex max-w-[100vw] flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center w-full">
         <Cursor />
         <NavBar />
         <HiddenNav />

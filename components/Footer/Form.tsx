@@ -128,18 +128,18 @@ const Form = () => {
   };
 
   return (
-    <div className="relative flex w-full flex-1 flex-col items-center overflow-hidden rounded-3xl bg-warnaHitamCerah">
+    <div className="relative flex w-full flex-1 flex-col items-center overflow-hidden rounded-3xl bg-[color:var(--muted)] border border-[color:var(--border)]">
       <Toast
         toastText={toastText}
         showToast={showToast}
         setShowToast={setShowToast}
       />
-      <h1 className="mt-4 text-center text-[36px] font-semibold leading-none text-warnaPutih lg:text-[48px]">
+      <h1 className="mt-4 text-center text-[36px] font-semibold leading-none lg:text-[48px]">
         Contact Me
       </h1>
       <form className="z-[4] w-full p-8">
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full rounded-[2rem] bg-transparent p-3 font-geist text-sm leading-none outline-[unset] placeholder:text-[color:var(--foreground)]/50 border border-[color:var(--border)]"
           type="text"
           name="name"
           placeholder="Name"
@@ -153,14 +153,14 @@ const Form = () => {
           onBlur={() => {
             setIsNama(false);
           }}
-          initial={{ border: "2px solid #1d1d1d" }}
-          whileFocus={{ border: "2px solid #f5f2ee" }}
+          initial={{ border: "2px solid var(--border)" }}
+          whileFocus={{ border: "2px solid var(--foreground)" }}
           whileHover={{
-            border: isNama ? "2px solid #f5f2ee" : "2px solid #f6f3ef80",
+            border: isNama ? "2px solid var(--foreground)" : "2px solid var(--border)",
           }}
         />
         <motion.input
-          className="mt-4 w-full rounded-[2rem] bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full rounded-[2rem] bg-transparent p-3 font-geist text-sm leading-none outline-[unset] placeholder:text-[color:var(--foreground)]/50 border border-[color:var(--border)]"
           type="email"
           name="email"
           placeholder="Email"
@@ -174,14 +174,14 @@ const Form = () => {
           onBlur={() => {
             setIsEmail(false);
           }}
-          initial={{ border: "2px solid #1d1d1d" }}
-          whileFocus={{ border: "2px solid #f5f2ee" }}
+          initial={{ border: "2px solid var(--border)" }}
+          whileFocus={{ border: "2px solid var(--foreground)" }}
           whileHover={{
-            border: isEmail ? "2px solid #f5f2ee" : "2px solid #f6f3ef80",
+            border: isEmail ? "2px solid var(--foreground)" : "2px solid var(--border)",
           }}
         />
         <motion.textarea
-          className="mt-4 w-full resize-none rounded-2xl bg-warnaHitam p-3 font-geist text-sm leading-none text-warnaPutih outline-[unset] placeholder:text-warnaPutih"
+          className="mt-4 w-full resize-none rounded-2xl bg-transparent p-3 font-geist text-sm leading-none outline-[unset] placeholder:text-[color:var(--foreground)]/50 border border-[color:var(--border)]"
           cols={30}
           rows={5}
           name="message"
@@ -196,14 +196,14 @@ const Form = () => {
           onBlur={() => {
             setIsPesan(false);
           }}
-          initial={{ border: "2px solid #1d1d1d" }}
-          whileFocus={{ border: "2px solid #f5f2ee" }}
+          initial={{ border: "2px solid var(--border)" }}
+          whileFocus={{ border: "2px solid var(--foreground)" }}
           whileHover={{
-            border: isPesan ? "2px solid #f5f2ee" : "2px solid #f6f3ef80",
+            border: isPesan ? "2px solid var(--foreground)" : "2px solid var(--border)",
           }}
         />
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-3 text-sm text-warnaPutih"
+          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-[color:var(--muted)] p-3 text-sm"
           initial="initial"
           animate="hidden"
           whileHover="visible"
@@ -218,7 +218,7 @@ const Form = () => {
           ) : (
             <>
               <motion.div
-                className="absolute z-0 w-full bg-warnaPutih"
+                className="absolute z-0 w-full bg-[color:var(--warna-putih)]"
                 variants={overlay}
               />
               <div className="[transform-style: preserve-3d] flex h-full w-full flex-col items-center justify-center">
@@ -226,7 +226,7 @@ const Form = () => {
                   Send Message
                 </motion.p>
                 <motion.p
-                  className="pointer-events-none absolute text-warnaHitam"
+                  className="pointer-events-none absolute text-black"
                   variants={secondP}
                 >
                   Send Message
@@ -235,11 +235,11 @@ const Form = () => {
             </>
           )}
         </motion.button>
-        <h3 className="mt-4 text-center text-sm font-semibold text-warnaPutih">
+        <h3 className="mt-4 text-center text-sm font-semibold">
           Or Email
         </h3>
         <motion.button
-          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-warnaHitam p-3 text-sm text-warnaPutih"
+          className="relative mt-4 flex w-full items-center justify-center overflow-hidden rounded-[2rem] bg-[color:var(--muted)] p-3 text-sm"
           initial="initial"
           animate="hidden"
           whileHover="visible"
@@ -250,7 +250,7 @@ const Form = () => {
           }}
         >
           <motion.div
-            className="absolute z-0 w-full bg-warnaPutih"
+            className="absolute z-0 w-full bg-[color:var(--warna-putih)]"
             variants={overlay}
           />
           <div className="[transform-style: preserve-3d] flex h-full w-full flex-col items-center justify-center">
@@ -258,7 +258,7 @@ const Form = () => {
               begdar8zouhair@gmail.com
             </motion.p>
             <motion.p
-              className="pointer-events-none absolute text-warnaHitam"
+              className="pointer-events-none absolute text-black"
               variants={secondP}
             >
               begdar8zouhair@gmail.com

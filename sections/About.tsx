@@ -4,7 +4,7 @@ import AnimatedTextBlock from "@/components/AnimatedAboutText";
 import { useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import ProfilePhoto from "../assets/images/Profile.jpg";
+import ProfilePhoto from "../assets/images/profile2.jpg";
 
 const About = () => {
   const ref = useRef(null);
@@ -43,7 +43,7 @@ const About = () => {
         <Image
           src={ProfilePhoto}
           alt="Profile"
-          className="rounded-full border-4 border-white aspect-square object-cover w-[50vw] max-w-[250px] xl:max-w-[320px]"
+          className="rounded-full border-4 border-[color:var(--border)] aspect-square object-cover w-[50vw] max-w-[250px] xl:max-w-[320px]"
         />
       </div>
     </section>

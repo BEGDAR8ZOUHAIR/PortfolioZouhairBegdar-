@@ -16,13 +16,13 @@ type SkillGridProps = {
 const SkillGrid: React.FC<SkillGridProps> = ({ title, items, windowWidth }) => {
   return (
     <>
-      <h1 className="mx-4 my-12 cursor-default text-[4rem] font-bold leading-none text-warnaPutih lg:text-[8rem]">
+      <h1 className="mx-4 my-12 cursor-default text-[4rem] font-bold leading-none lg:text-[8rem]">
         {title}
       </h1>
       <div className="mx-4 my-0 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <motion.div
-            className="flex min-h-48 rounded-2xl bg-warnaHitamCerah md:min-h-72 lg:min-h-96"
+            className="flex min-h-48 rounded-2xl bg-[color:var(--muted)] border border-[color:var(--border)] md:min-h-72 lg:min-h-96"
             key={item.name + index}
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 100 }}
@@ -44,7 +44,7 @@ const SkillGrid: React.FC<SkillGridProps> = ({ title, items, windowWidth }) => {
                 height={windowWidth < 1024 ? 80 : 150}
               />
               <div className="self-end">
-                <h1 className="m-0 cursor-default font-geist text-[2rem] font-bold text-warnaPutih lg:text-[2.5rem] xl:text-[3.5rem]">
+                <h1 className="m-0 cursor-default font-geist text-[2rem] font-bold lg:text-[2.5rem] xl:text-[3.5rem]">
                   {item.name}
                 </h1>
               </div>

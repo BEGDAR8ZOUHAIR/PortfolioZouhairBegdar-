@@ -24,7 +24,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-4 overflow-hidden bg-warnaHitam text-[min(6vw,64px)] leading-none text-warnaPutih md:gap-6 lg:gap-8"
+      className="flex h-screen w-screen cursor-default flex-col items-center justify-center gap-4 overflow-hidden text-[min(6vw,64px)] leading-none md:gap-6 lg:gap-8"
       ref={meRef}
       id="about"
     >
@@ -39,7 +39,7 @@ const Hero = () => {
       >
         Hi! I&apos;m{" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-3 !italic lg:px-8`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-[color:var(--border)] px-3 !italic lg:px-8`}
         >
           Zouhair
         </span>
@@ -54,7 +54,7 @@ const Hero = () => {
         style={{ x: x2 }}
       >
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-3 !italic lg:px-8`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-[color:var(--border)] px-3 !italic lg:px-8`}
         >
           React Native
         </span>{" "}
@@ -71,7 +71,7 @@ const Hero = () => {
       >
         {" "}
         <span
-          className={`${playfairDisplay.className} border-rad rounded-full border border-warnaPutih px-3 !italic lg:px-8`}
+          className={`${playfairDisplay.className} border-rad rounded-full border border-[color:var(--border)] px-3 !italic lg:px-8`}
         >
           React Developer
         </span>

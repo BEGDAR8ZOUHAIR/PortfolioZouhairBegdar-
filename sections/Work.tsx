@@ -33,7 +33,7 @@ const Work = () => {
           {array.map((_, index) => {
             return (
               <h1
-                className="cursor-default text-[12vw] font-bold leading-none text-warnaPutih"
+                className="cursor-default text-[12vw] font-bold leading-none"
                 key={index}
               >
                 Works.

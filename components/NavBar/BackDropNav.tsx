@@ -38,7 +38,7 @@ const BackDropNav = () => {
             duration: 1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="bg-warnaHitam/0 fixed bottom-0 left-0 right-0 top-0 z-[11] will-change-transform"
+          className="fixed bottom-0 left-0 right-0 top-0 z-[11] will-change-transform"
         />
       )}
     </AnimatePresence>

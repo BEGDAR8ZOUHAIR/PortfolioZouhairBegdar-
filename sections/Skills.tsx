@@ -28,7 +28,7 @@ const Skills = () => {
           {array.map((_, index) => {
             return (
               <h1
-                className="cursor-default font-geist text-[12vw] font-bold leading-none text-warnaPutih"
+                className="cursor-default font-geist text-[12vw] font-bold leading-none"
                 key={index}
               >
                 Skills.

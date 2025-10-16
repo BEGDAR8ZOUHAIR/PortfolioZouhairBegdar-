@@ -69,7 +69,7 @@ const Welcome = () => {
               <motion.span
                 key={index}
                 variants={revealVariants}
-                className="font-geist text-[10vw] font-extrabold text-warnaPutih"
+                className="font-geist text-[10vw] font-extrabold"
               >
                 {letter}
               </motion.span>

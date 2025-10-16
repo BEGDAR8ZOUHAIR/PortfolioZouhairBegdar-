@@ -65,7 +65,7 @@ const Sosmed = () => {
             animate="hidden"
             whileHover="visible"
             whileFocus="visible"
-            className="relative z-[1] flex min-h-48 overflow-hidden rounded-2xl bg-warnaHitamCerah"
+            className="relative z-[1] flex min-h-48 overflow-hidden rounded-2xl bg-[color:var(--muted)] border border-[color:var(--border)]"
             key={item.nama + index}
             onClick={(e) => {
               e.preventDefault();
@@ -73,7 +73,7 @@ const Sosmed = () => {
             }}
           >
             <motion.div
-              className="absolute z-[-1] h-full w-full translate-y-full rounded-2xl bg-warnaPutih"
+              className="absolute z-[-1] h-full w-full translate-y-full rounded-2xl bg-[color:var(--warna-putih)]"
               variants={overlay}
             />
             <div className="flex h-full w-full flex-1 flex-col justify-between p-4">
@@ -112,13 +112,13 @@ const Sosmed = () => {
                   variants={perspective}
                 >
                   <motion.h1
-                    className="pointer-events-none m-0 cursor-default text-2xl font-semibold leading-none text-warnaPutih lg:text-[2.5rem]"
+                    className="pointer-events-none m-0 cursor-default text-2xl font-semibold leading-none lg:text-[2.5rem]"
                     variants={firstP}
                   >
                     {item.nama}
                   </motion.h1>
                   <motion.h1
-                    className="pointer-events-none absolute m-0 cursor-default text-2xl font-semibold leading-none text-warnaHitam [transform-origin:bottom_center] [transform:rotateX(-90deg)_translateY(9px)] lg:text-[2.5rem]"
+                    className="pointer-events-none absolute m-0 cursor-default text-2xl font-semibold leading-none text-black [transform-origin:bottom_center] [transform:rotateX(-90deg)_translateY(9px)] lg:text-[2.5rem]"
                     variants={secondP}
                   >
                     {item.nama}
